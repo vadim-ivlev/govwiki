@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport"></meta>
+<title>California Healthcare Districts with 2013 SCO Financial Data - Google Fusion Tables</title>
+<style type="text/css">
+    body {padding:20px;}
+#googft-legend{background-color:#fff;border:1px solid #000;font-family:Arial, sans-serif;font-size:12px;margin:5px;padding:10px 10px 8px;}#googft-legend p{font-weight:bold;margin-top:0;}#googft-legend div{margin-bottom:5px;}.googft-legend-swatch{border:1px solid;float:left;height:12px;margin-right:8px;width:20px;}.googft-legend-range{margin-left:0;}.googft-dot-icon{margin-right:8px;}.googft-paddle-icon{height:24px;left:-8px;margin-right:-8px;position:relative;vertical-align:middle;width:24px;}.googft-legend-source{margin-bottom:0;margin-top:8px;}.googft-legend-source a{color:#666;font-size:11px;}
+</style>
+
+<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false&amp;v=3"></script>
+
+<script type="text/javascript">
+  function initialize() {
+    google.maps.visualRefresh = true;
+    var isMobile = (navigator.userAgent.toLowerCase().indexOf('android') > -1) ||
+      (navigator.userAgent.match(/(iPod|iPhone|iPad|BlackBerry|Windows Phone|iemobile)/));
+    if (isMobile) {
+      var viewport = document.querySelector("meta[name=viewport]");
+      viewport.setAttribute('content', 'initial-scale=1.0, user-scalable=no');
+    }
+    var mapDiv = document.getElementById('googft-mapCanvas');
+    mapDiv.style.width = isMobile ? '100%' : '100%';
+    mapDiv.style.height = isMobile ? '500px' : '800px';
+    var map = new google.maps.Map(mapDiv, {
+      center: new google.maps.LatLng(37.468374205139995, -119.3114047265625),
+      zoom: 6,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+    map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(document.getElementById('googft-legend-open'));
+    map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(document.getElementById('googft-legend'));
+
+    layer = new google.maps.FusionTablesLayer({
+      map: map,
+      heatmap: { enabled: false },
+      query: {
+        select: "col2\x3e\x3e0",
+        from: "14d1Qozeu1_BQNN36WYJ5PCoRMfCb3XxNyfDVz41m",
+        where: ""
+      },
+      options: {
+        styleId: 2,
+        templateId: 2
+      }
+    });
+
+    if (isMobile) {
+      var legend = document.getElementById('googft-legend');
+      var legendOpenButton = document.getElementById('googft-legend-open');
+      var legendCloseButton = document.getElementById('googft-legend-close');
+      legend.style.display = 'none';
+      legendOpenButton.style.display = 'block';
+      legendCloseButton.style.display = 'block';
+      legendOpenButton.onclick = function() {
+        legend.style.display = 'block';
+        legendOpenButton.style.display = 'none';
+      }
+      legendCloseButton.onclick = function() {
+        legend.style.display = 'none';
+        legendOpenButton.style.display = 'block';
+      }
+    }
+  }
+
+  google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+</head>
+
+<body>
+  <div id="googft-mapCanvas"></div>
+  <input id="googft-legend-open" style="display:none" type="button" value="Legend"></input>
+  <div id="googft-legend">
+    <p id="googft-legend-title">Fund Equity, End of Period</p>
+    <div>
+      <span class="googft-legend-swatch" 
+style="background-color: #ff0000"></span>
+      <span class="googft-legend-range">-999,999,999.99 to -0.01</span>
+    </div>
+    <div>
+      <span class="googft-legend-swatch" 
+style="background-color: #000000"></span>
+      <span class="googft-legend-range">Not Available</span>
+    </div>
+    <div>
+      <span class="googft-legend-swatch" 
+style="background-color: #00ff00"></span>
+      <span class="googft-legend-range">0.01 to 999,999,999.99</span>
+    </div>
+    <div class="googft-legend-source">
+      <a href="data?docid=14d1Qozeu1_BQNN36WYJ5PCoRMfCb3XxNyfDVz41m" target="_blank">Source</a>
+    </div>
+    <input id="googft-legend-close" style="display:none" type="button" value="Hide"></input>
+  </div>
+
+<div style="width:100%; border: 2px solid; padding:3px; box-sizing: border-box;">
+Palm Drive Healthcare District&#39;s 2014 municipal <a href="http://www.pressdemocrat.com/news/1793332-181/palm-drive-hospital-board-authorizes" target="_blank">bankruptcy filing</a> 
+marks the 12th time a California healthcare district has filed for bankruptcy since 1995. The <a href="http://www.achd.org" target="_blank">Association of California Healthcare Districts</a> lists 78 such entities. 
+Below, I have mashed up ACHD&#39;s healthcare district map with 2013 special district financial data supplied by the California State Controller&#39;s Office on its new open data website, <a href="https://bythenumbers.sco.ca.gov/" target="_blank">ByTheNumbers</a>. 
+In addition, I provide selected data from district financial statements, where available.
+<p>When the value of a local government&#39;s liabilities exceeds its assets, that entity faces a heightened risk of bankruptcy. 
+The Google Fusion map denotes such &#34;negative equity&#34; situations by displaying the district in red. 
+Green districts have positive equity, while I was unable to find equity data in the SCO database for those colored black.
+You can display selected financial highlights as well as links to audited financial statements by clicking on a district polygon.  
+More financial details are available from the &#34;row&#34; view of the <a href="https://www.google.com/fusiontables/DataSource?docid=14d1Qozeu1_BQNN36WYJ5PCoRMfCb3XxNyfDVz41m#rows:id=1" target="_blank">Google Fusion table</a>.
+</div>  
+  
+</body>
+</html>
