@@ -1,3 +1,4 @@
+// array if gove_name strings
 var gov_name_values = gov_names.map ( function(e){return e.gov_name;} );
 
 var substringMatcher = function(strs) {
@@ -26,16 +27,6 @@ var substringMatcher = function(strs) {
   };
 };
  
-var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
-  'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
-  'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
-  'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
-  'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
-  'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
-  'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
-  'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
-  'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
-];
  
 $('.typeahead').typeahead({
   hint: true,
@@ -45,6 +36,5 @@ $('.typeahead').typeahead({
 {
   name: 'states',
   displayKey: 'value',
-  //source: substringMatcher(states)
   source: substringMatcher(gov_name_values)
 });
