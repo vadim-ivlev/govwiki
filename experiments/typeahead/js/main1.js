@@ -64,4 +64,19 @@ function startSuggestion(){
 }
 
 //startSuggestion();
+
+/*
+$.ajaxSetup({
+      cache: true
+});
 $.getScript("../../data/govs.js", startSuggestion );
+*/
+
+
+$.ajax({
+      url:"../../data/govs.js",
+      dataType: "script",
+      cache: true,
+      success: startSuggestion
+});
+
