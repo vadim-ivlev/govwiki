@@ -98,13 +98,48 @@ body {
     max-width:800px;
     margin-left:auto;
     margin-right:auto;
+    text-align:center;
 }
 #myinput {
     width:496px;
 }
 
+.smaller {
+    font-size:90%;
+    color:#aaa;
+    font-family:monospace;
+}
 
+.minwidth {
+    min-width:370px;
+    display:inline-block;
+}
 
+#details  {
+    margin-top:30px;
+    font-size:130%;
+}
+
+#details p {
+    margin:0;
+    padding:0;
+    display:inline;
+}
+.f-nam {
+    min-width:230px;
+    display:inline-block;
+    color:#aaa;
+    text-align:right;
+    margin-right:5px;
+}
+
+.f-val {
+    min-width:250px;
+    display:inline-block;
+    color:black;
+    text-align:left;
+    margin-left:5px;
+}
 
 
 
