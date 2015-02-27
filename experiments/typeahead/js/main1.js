@@ -19,7 +19,9 @@ var fieldNames ={
     "fips_state"                     : "FIPS State Code"                        ,
     "fips_county"                    : "FIPS County Code"                       ,
     "fips_place"                     : "FIPS Place Code"                        ,
-    "county_area_name"               : "County (or County Equivalent) Name"
+    "county_area_name"               : "County (or County Equivalent) Name"     ,
+    "county_area_type"               : "County Type"
+
 }
 var substringMatcher = function(strs) {
     return function findMatches(q, cb) {
